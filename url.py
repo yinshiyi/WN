@@ -11,8 +11,3 @@ query_string = urlencode(para,doseq=True)
 
 updated_url = urlunparse([o[0], o[1], o[2], o[3], query_string, o[5]])
 print(updated_url)
-
-
-
-
-
