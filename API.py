@@ -8,7 +8,7 @@ query_params = {
 }
 
 headers = {
-    'X-RapidAPI-Key': '400ba8630dmshbff9a11d7a32a5ap1c85a9jsn16af3958408e',
+    'X-RapidAPI-Key': 'none',
     'X-RapidAPI-Host': 'southwest.p.rapidapi.com'
 }
 
