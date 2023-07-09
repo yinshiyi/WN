@@ -1,4 +1,8 @@
-# url_month = "https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&currencyCode=POINTS&destinationAirportCode=HNL&hasNearByAirport=undefined&lapInfantPassengersCount=0&originationAirportCode=SJC&passengerType=ADULT&promoCode=&returnAirportCode=&selectedFlight1=2023-09-06&selectedFlight2=&tripType=oneway&clk=6403032&cbid=6403032"
+# url_month_oneway = "https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&currencyCode=POINTS&destinationAirportCode=HNL&hasNearByAirport=undefined&lapInfantPassengersCount=0&originationAirportCode=SJC&passengerType=ADULT&promoCode=&returnAirportCode=&selectedFlight1=2024-01-01&selectedFlight2=&tripType=oneway&clk=6403032&cbid=6403032"
+url_month_oneway = "https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&currencyCode=POINTS&departureDate=2024-01-01&destinationAirportCode=HNL&lapInfantPassengersCount=0&originationAirportCode=SFO&passengerType=ADULT&promoCode=&returnAirportCode=&returnDate=&tripType=oneway"
+
+# url_month_oneway = "https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&cbid=6403032&clk=6403032&currencyCode=POINTS&departureDate=2024-01-01&destinationAirportCode=HNL&hasNearByAirport=undefined&lapInfantPassengersCount=0&originationAirportCode=SJC&passengerType=ADULT&persistNotifications=true&promoCode=&returnAirportCode=&returnDate=&selectedFlight1=2023-09-06&tripType=oneway"
+# url_month = "https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&cbid=6403032&clk=6403032&currencyCode=POINTS&departureDate=2024-01-01&destinationAirportCode=HNL&hasNearByAirport=undefined&lapInfantPassengersCount=0&originationAirportCode=OAK&passengerType=ADULT&persistNotifications=true&promoCode=&returnAirportCode=&returnDate=2024-01-01&selectedFlight1=2023-09-23&selectedFlight2=2023-09-24&tripType=roundtrip"
 # para['fareType'] = ['USD']
 import time
 from urllib.parse import urlparse, parse_qs, parse_qsl, urlunparse, urlencode
@@ -6,11 +10,12 @@ from urllib.parse import urlparse, parse_qs, parse_qsl, urlunparse, urlencode
 
 # webbrowser.open('https://www.southwest.com')
 # Initial URL
-url = "https://www.southwest.com/air/booking/select.html?adultPassengersCount=1&departureDate=2023-09-23&departureTimeOfDay=ALL_DAY&destinationAirportCode=SEA&fareType=POINTS&int=LFCBOOKAIR&lapInfantPassengersCount=0&originationAirportCode=OAK&passengerType=ADULT&promoCode=&returnAirportCode=&returnDate=2023-09-24&returnTimeOfDay=ALL_DAY&selectedFlight1=2023-09-23&selectedFlight2=2023-09-24&tripType=roundtrip"
+url_single = "https://www.southwest.com/air/booking/select.html?adultPassengersCount=1&departureDate=2023-09-23&departureTimeOfDay=ALL_DAY&destinationAirportCode=SEA&fareType=POINTS&int=LFCBOOKAIR&lapInfantPassengersCount=0&originationAirportCode=OAK&passengerType=ADULT&promoCode=&returnAirportCode=&returnDate=2023-09-24&returnTimeOfDay=ALL_DAY&selectedFlight1=2023-09-23&selectedFlight2=2023-09-24&tripType=roundtrip"
+
 
 # Parse the URL
-o = urlparse(url)
-para = parse_qs(o.query)
+o = urlparse(url_month_oneway)
+para = parse_qs(o.query,keep_blank_values=True)
 
 # Combinations for destinationAirportCode and originationAirportCode
 destinations = ['HNL', 'KOA', 'LIH', 'OGG']
@@ -32,6 +37,10 @@ for dest in destinations:
 # Print the generated links
 for link in links:
     print(link)
+with open('links.txt', 'w') as file:
+    file.write('\n'.join(links))
+
+
 
 
 from selenium import webdriver
