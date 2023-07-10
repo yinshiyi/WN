@@ -19,6 +19,8 @@ para = parse_qs(o.query,keep_blank_values=True)
 
 # Combinations for destinationAirportCode and originationAirportCode
 destinations = ['HNL', 'KOA', 'LIH', 'OGG']
+destinations_los = ['LAX', 'ONT', 'BUR', 'SNA','LGB']
+destinations_las = ['LAS']
 origins = ['OAK', 'SJC', 'SFO']
 
 # Generate 9 links
@@ -39,7 +41,43 @@ for link in links:
     print(link)
 with open('links.txt', 'w') as file:
     file.write('\n'.join(links))
+  
+def generate_and_save_links(destinations, file_name):
+    # Generate the links
+    links = []
+    for dest in destinations:
+        for origin in origins:
+            # Update the query parameters
+            para['destinationAirportCode'] = [dest]
+            para['originationAirportCode'] = [origin]
 
+            # Generate the updated URL
+            query_string = urlencode(para, doseq=True)
+            updated_url = urlunparse([o[0], o[1], o[2], o[3], query_string, o[5]])
+            links.append(updated_url)
+    links.append("\n")
+    for dest in origins:
+        for origin in destinations:
+            # Update the query parameters
+            para['destinationAirportCode'] = [dest]
+            para['originationAirportCode'] = [origin]
+
+            # Generate the updated URL
+            query_string = urlencode(para, doseq=True)
+            updated_url = urlunparse([o[0], o[1], o[2], o[3], query_string, o[5]])
+            links.append(updated_url)
+
+    # Print the generated links
+    for link in links:
+        print(link)
+
+    # Save the links to a file
+    with open(file_name, 'w') as file:
+        file.write('\n'.join(links))
+
+# Example usage
+generate_and_save_links(destinations_las, 'links_las.txt')
+generate_and_save_links(destinations_los, 'links_los.txt')
 
 
 

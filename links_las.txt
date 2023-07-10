@@ -1,0 +1,8 @@
+https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&currencyCode=POINTS&departureDate=2024-01-01&destinationAirportCode=LAS&lapInfantPassengersCount=0&originationAirportCode=OAK&passengerType=ADULT&promoCode=&returnAirportCode=&returnDate=&tripType=oneway
+https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&currencyCode=POINTS&departureDate=2024-01-01&destinationAirportCode=LAS&lapInfantPassengersCount=0&originationAirportCode=SJC&passengerType=ADULT&promoCode=&returnAirportCode=&returnDate=&tripType=oneway
+https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&currencyCode=POINTS&departureDate=2024-01-01&destinationAirportCode=LAS&lapInfantPassengersCount=0&originationAirportCode=SFO&passengerType=ADULT&promoCode=&returnAirportCode=&returnDate=&tripType=oneway
+
+
+https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&currencyCode=POINTS&departureDate=2024-01-01&destinationAirportCode=OAK&lapInfantPassengersCount=0&originationAirportCode=LAS&passengerType=ADULT&promoCode=&returnAirportCode=&returnDate=&tripType=oneway
+https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&currencyCode=POINTS&departureDate=2024-01-01&destinationAirportCode=SJC&lapInfantPassengersCount=0&originationAirportCode=LAS&passengerType=ADULT&promoCode=&returnAirportCode=&returnDate=&tripType=oneway
+https://www.southwest.com/air/low-fare-calendar/select-dates.html?adultPassengersCount=1&currencyCode=POINTS&departureDate=2024-01-01&destinationAirportCode=SFO&lapInfantPassengersCount=0&originationAirportCode=LAS&passengerType=ADULT&promoCode=&returnAirportCode=&returnDate=&tripType=oneway
